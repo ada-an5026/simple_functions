@@ -1,9 +1,11 @@
+import math
+
 import pytest
 
 from simple_functions import my_sum
 from simple_functions import factorial
 from simple_functions import sin
-import math
+
 
 class TestSimpleFunctions:
     """Tests for the functions in functions1.py."""

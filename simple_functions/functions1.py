@@ -16,6 +16,7 @@ def factorial(n):
     """Return the factorial of num."""
     return n * factorial(n - 1) if n else 1
 
+
 def sin(x, terms=10):
     """Return the sine of x (in radians), via its Taylor series."""
     return my_sum((-1)**n * x**(2*n + 1) / factorial(2*n + 1)
