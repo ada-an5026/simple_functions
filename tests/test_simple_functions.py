@@ -2,7 +2,8 @@ import pytest
 
 from simple_functions import my_sum
 from simple_functions import factorial
-
+from simple_functions import sin
+import math
 
 class TestSimpleFunctions:
     """Tests for the functions in functions1.py."""
@@ -24,3 +25,13 @@ class TestSimpleFunctions:
     def test_factorial(self, number, expected):
         """factorial returns the factorial of a number."""
         assert factorial(number) == expected
+
+    @pytest.mark.parametrize('number, expected', [
+        (0, 0),
+        (3.14159, 2.65358979335273e-06),
+        (1.5708, 0.9999999999932537),
+        (-1, -math.sin(1)),
+    ])
+    def test_sin(self, number, expected):
+        """sin returns the sine of a number in radians."""
+        assert sin(number) == pytest.approx(expected, abs=1e-6)
