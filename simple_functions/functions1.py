@@ -10,6 +10,7 @@ def my_sum(iterable):
         tot += i
     return tot
 
+
 @cache
 def factorial(n):
     """Return the factorial of num."""
